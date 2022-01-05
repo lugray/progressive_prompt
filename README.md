@@ -14,8 +14,11 @@ function __progressive_prompt_exec_incr() {
 }
 precmd_functions+=(__progressive_prompt_exec_incr)
 setopt PROMPT_SUBST
-PROMPT='$(progressive_prompt $$ $__progressive_prompt_exec_no "\$ " prompt)'
+placeholder="\$ "
+PROMPT='$(progressive_prompt $$ $__progressive_prompt_exec_no "$placeholder" prompt)'
 ```
+
+`$placeholder` is a string to use a placeholder prompt until your `prompt` program first generates a prompt.
 
 `prompt` should be an executable that outputs iterative prompts separated by null bytes, in theory becoming more and more informative. A dummy example is provided.
 
