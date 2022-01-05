@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+print "%~ $ \0"
+$stdout.flush
+
+sleep 1 # Do work to produce a bit of git info
+
+print "%~ [a little git info] $ \0"
+$stdout.flush
+
+sleep 1 # Do work to produce more git info
+
+print "%~ [a little git info|more git info] $ "
